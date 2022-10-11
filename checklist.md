@@ -28,10 +28,12 @@
 - [x] memchr
 - [x] memcmp
 - [x] strnstr
-- [ ] atoi
+- [x] atoi
+
 ### malloc autorisée
 - [ ] calloc
-- [ ] strdup
+- [x] strdup
+
 ### fonctions supplémentaires
 - [ ] ft_substr
 - [ ] ft_strjoin
@@ -54,3 +56,7 @@
 - [ ] ft_lstclear
 - [ ] ft_lstiter
 - [ ] ft_lstmap
+
+### mes propres ajouts
+- [ ] ft_isspace
+- [ ] ft_realloc

@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skoulen <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 10:55:25 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/11 10:55:27 by skoulen          ###   ########.fr       */
+/*   Created: 2022/10/11 10:31:42 by skoulen           #+#    #+#             */
+/*   Updated: 2022/10/11 10:31:46 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char    *ft_strtrim(char const *s1, char const *set)
 {
+    char    *ptr;
+    size_t  len;
     size_t  i;
-    size_t  j;
 
-    i = 0;
-    if (!*needle)
-        return ((char *)haystack);
-    while (haystack[i] && i < len)
+    len = ft_strlen(s1);
+    ptr = malloc(len + 1);
+    if (!ptr)
+        return (0);
+    while (*s1)
     {
-        j = 0;
-        while (haystack[i + j] == needle[j] && i + j < len)
-        {
-            j++;
-        }
-        if (!needle[j])
-        {
-            return ((char *)&haystack[i]);
-        }
-        i++;
+        i = 0;
+        while (*s1 != set[i])
+            i++;
+        if ()
     }
-    return (0);
+
+    while (*s1)
+    {
+        i = 0;
+        while (*s1 != set[i] && set[i])
+            i++;
+        if (!set[i])
+        {
+            *ptr = *s1;
+            ptr++;
+        }
+        s1++;
+    }
+    return (ptr);
 }
