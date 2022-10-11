@@ -10,9 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 libft.a: ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_memset.o ft_strlen.o ft_strlcat.o ft_strlcpy.o ft_tolower.o ft_toupper.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memcmp.o ft_memchr.o ft_strnstr.o ft_isspace.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_realloc.o
 	ar r $@ ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_memset.o ft_strlen.o ft_strlcat.o ft_strlcpy.o ft_tolower.o ft_toupper.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memcmp.o ft_memchr.o ft_strnstr.o ft_isspace.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_realloc.o
@@ -95,10 +96,10 @@ ft_strjoin.o: ft_strjoin.c
 	$(CC) $(CFLAGS) -c ft_strjoin.c
 
 ft_strtrim.o: ft_strtrim.c
-	$(CC) $(CFLAGS) -c ft_strtrim.c
+	$(CC) $(CFLAGS) -c ft_strtrim.c -o $@
 
 ft_realloc.o: ft_realloc.c
 	$(CC) $(CFLAGS) -c ft_realloc.c
 
 clean:
-	rm *.o
+	rm -rf *.o
