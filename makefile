@@ -47,7 +47,10 @@ ft_digitcount.o \
 ft_strmapi.o \
 ft_striteri.o \
 ft_putchar_fd.o \
-ft_putstr_fd.o
+ft_putstr_fd.o \
+ft_putendl_fd.o \
+ft_putnbr_fd.o \
+ft_split1.o
 
 $(NAME): $(SRC)
 	ar r $@ $?

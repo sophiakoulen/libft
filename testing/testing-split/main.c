@@ -10,11 +10,14 @@ int main()
 {
     printf("testing ft_split...\n");
 
-    char s1[] = "aaaaAaA";
+    char s1[] = "aaaaAhuhaA";
     char c = 'a';
-
-    char ** = ft_strtrim(s1, set);
-    printf("%s\n", s2);
-    free(s2);
+    char	**arr = ft_split(s1, c);
+    while (*arr)
+	{
+		printf("truc: ");
+		printf("%s\n", *arr);
+		(arr)++;
+	}
     return (0);
 }

@@ -1,68 +1,82 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/12 19:08:33 by skoulen           #+#    #+#             */
+/*   Updated: 2022/10/12 19:56:00 by skoulen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-typedef struct s_dynamic_container
+static char	*ft_tok(const char **s, char sep)
 {
-	void	*data;
+	char 	*tok;
 	size_t	i;
-	size_t	max;
-	size_t	size;
-}	t_dynamic_container;
 
-static	int	d_append(t_dynamic_container *c, void *thing)
+	while (**s && **s == sep)
+		(*s)++;
+	i = 0;
+	while ((*s)[i] && (*s)[i] != sep)
+		i++;
+	tok = ft_substr(*s, 0, i);
+	*s += i + 1;
+	return (tok);
+}
+
+static size_t	word_count(char const *s, char c)
 {
-	if (c->i == c->max)
+	size_t	count;
+
+	count = 0;
+	while (*s)
 	{
-		c->max *= 2;
-		c->data = ft_realloc(data, c->max * c->size);
-		if (!c->data)
-			return (0);
+		if (*s == c && *(s + 1) != c)
+			count++;
+		s++;
 	}
-	ft_memcpy(c->data + c->i, thing, size);
-	c->i++;
-	return (1);
+	return (count);
 }
 
-static int	d_init(t_dynamic_container *c, size_t size)
+void	cleanup(char **arr, unsigned int n)
 {
-	c->i = 0;
-	c->max = 32;
-	c->size = size;
-	c->data = malloc(c->max);
-	if (!c->data)
-		return (0);
-	return (1);
-}
+	unsigned int	i;
 
-static void	*d_cleanup(t_dynamic_container *c)
-{
-	free(c->data);
+	i = 0;
+	while (i < n)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	t_dynamic_container	arr;
-	t_dynamic_container	str;
+	char	**arr;
+	char	*str;
+	unsigned int i;
 
-	if (!d_init(&arr, sizeof(char *)))
+	arr = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!arr)
 		return (0);
-	if (!d_init(&str, sizeof(char)))
+	i = 0;
+	str = ft_tok(&s, c);
+	while (str && *str)
 	{
-		d_cleanup(&arr);
+		arr[i] = str;
+		str = ft_tok(&s, c);
+		i++;
+	}
+	if (!str)
+	{
+		cleanup(arr, i);
 		return (0);
 	}
-	while (*s)
-	{
-		while (*s && *s == c)
-			s++;
-		while (*s && *s != c)
-		{
-			if (!d_append(&str, *s))
-				return (0);
-			s++;
-		}
-		if (!d_append(&arr, str->data + str->i - 1))
-			return (0);
-		s++;
-	}
-	return (dynamic_array->data);
+	free(str);
+	arr[i] = 0;
+	return (arr);
 }
