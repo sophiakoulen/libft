@@ -48,6 +48,8 @@ int ft_atoi(const char *str);
 //personnal additions
 int     ft_isspace(int c);
 void    *ft_realloc(void *ptr, size_t size);
+int		ft_sign(int n);
+size_t	ft_digitcount(int n);
 
  #include <stdlib.h>
 
@@ -59,5 +61,11 @@ char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+ #include <unistd.h>
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
  
 #endif

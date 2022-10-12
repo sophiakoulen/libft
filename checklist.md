@@ -35,14 +35,14 @@
 - [x] strdup
 
 ### fonctions supplémentaires
-- [ ] ft_substr
-- [ ] ft_strjoin
+- [x] ft_substr
+- [x] ft_strjoin
 - [x] ft_strtrim
 - [ ] ft_split
-- [ ] ft_itoa
-- [ ] ft_strmapi
-- [ ] ft_striteri
-- [ ] ft_putchar_fd
+- [x] ft_itoa
+- [x] ft_strmapi
+- [x] ft_striteri
+- [x] ft_putchar_fd
 - [ ] ft_putstr_fd
 - [ ] ft_putendl_fd
 - [ ] ft_putnbr_fd
@@ -58,5 +58,5 @@
 - [ ] ft_lstmap
 
 ### mes propres ajouts
-- [ ] ft_isspace
+- [x] ft_isspace
 - [ ] ft_realloc

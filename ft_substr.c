@@ -19,6 +19,11 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     ptr = malloc(len + 1);
     if (!ptr)
         return (0);
-    ft_strlcpy(ptr, s + start, len + 1);
+	while (*s && start)
+	{
+		s++;
+		start--;
+	}
+    ft_strlcpy(ptr, s, len + 1);
     return (ptr);
 }
