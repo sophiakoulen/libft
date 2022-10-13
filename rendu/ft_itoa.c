@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/13 21:16:37 by skoulen           #+#    #+#             */
+/*   Updated: 2022/10/13 21:16:46 by skoulen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*itoa_helper(int n, char *ptr)
@@ -14,7 +26,6 @@ char	*ft_itoa(int n)
 	char	*str;
 	char	*ptr;
 	size_t	len;
-
 
 	len = ft_digitcount(n);
 	str = malloc(len + 1);
