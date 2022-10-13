@@ -50,7 +50,7 @@ ft_putchar_fd.o \
 ft_putstr_fd.o \
 ft_putendl_fd.o \
 ft_putnbr_fd.o \
-ft_split1.o
+ft_split.o
 
 $(NAME): $(SRC)
 	ar r $@ $?

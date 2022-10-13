@@ -23,7 +23,7 @@ static char	*ft_tok(const char **s, char sep)
 	while ((*s)[i] && (*s)[i] != sep)
 		i++;
 	tok = ft_substr(*s, 0, i);
-	*s += i + 1;
+	*s += i;
 	return (tok);
 }
 
@@ -34,7 +34,7 @@ static size_t	word_count(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s == c && *(s + 1) != c)
+		if (*s != c && (*(s + 1) == c || *(s + 1) == 0))
 			count++;
 		s++;
 	}
