@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split1.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 19:08:33 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/12 19:56:00 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/14 10:14:48 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*ft_tok(const char **s, char sep)
 {
-	char 	*tok;
+	char	*tok;
 	size_t	i;
 
 	while (**s && **s == sep)
@@ -56,9 +56,9 @@ void	cleanup(char **arr, unsigned int n)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
-	char	*str;
-	unsigned int i;
+	char			**arr;
+	char			*str;
+	unsigned int	i;
 
 	arr = malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (!arr)

@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skoulen <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:34:20 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/11 10:34:23 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/14 10:27:02 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char    *ptr;
+	char	*ptr;
 
-    ptr = malloc(len + 1);
+	ptr = malloc(len + 1);
 	if (!ptr)
-        return (0);
+		return (0);
 	while (*s && start)
 	{
 		s++;
 		start--;
 	}
-    ft_strlcpy(ptr, s, len + 1);
-    return (ptr);
+	ft_strlcpy(ptr, s, len + 1);
+	return (ptr);
 }

@@ -3,21 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skoulen <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:04 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/11 10:33:08 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/14 11:31:15 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	isspace(int c)
+{
+	return (c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == ' ');
+}
 
 int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	nbr;
 
-	while (ft_isspace(*str))
+	while (isspace(*str))
 		str++;
 	if (*str == '-')
 		sign = -1;

@@ -33,17 +33,13 @@ ft_strncmp.o \
 ft_memcmp.o \
 ft_memchr.o \
 ft_strnstr.o \
-ft_isspace.o \
 ft_atoi.o \
 ft_calloc.o \
 ft_strdup.o \
 ft_substr.o \
 ft_strjoin.o \
 ft_strtrim.o \
-ft_realloc.o \
-ft_sign.o \
 ft_itoa.o \
-ft_digitcount.o \
 ft_strmapi.o \
 ft_striteri.o \
 ft_putchar_fd.o \
@@ -52,6 +48,8 @@ ft_putendl_fd.o \
 ft_putnbr_fd.o \
 ft_split.o
 
+all: $(NAME)
+
 $(NAME): $(SRC)
 	ar r $@ $?
 	ranlib $@
@@ -59,7 +57,13 @@ $(NAME): $(SRC)
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
+
 clean:
-	rm -rf $(SRC) $(NAME)
+	rm -rf $(SRC)
+
+fclean:	clean
+	rm -f $(NAME)
+
+re: fclean all
 
 
