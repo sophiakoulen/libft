@@ -10,7 +10,7 @@ int main()
 {
     printf("testing ft_strtrim...\n");
 
-    char s1[] = "aaaaAaA";
+    char s1[] = "";
     char set[] = "";
 
     char *s2 = ft_strtrim(s1, set);

@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I../.. -L../..
+CFLAGS = -Wall -Wextra -Werror -I../../rendu -L../../rendu
 
 test: main.c
 	rm -rf test

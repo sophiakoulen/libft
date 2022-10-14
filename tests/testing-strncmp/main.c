@@ -10,30 +10,12 @@ int main()
 {
     printf("testing ft_strncmp...\n");
 
-    char buffer1[SIZE];
-    char buffer2[SIZE];
-    int T; scanf("%d", &T);
-    for(int t = 0; t < T; t++)
-    {
-        memset(buffer1, 0, SIZE);
-        memset(buffer2, 0, SIZE);
-
-        scanf("%s", buffer1);
-        scanf("%s", buffer2);
-
-        for (int i = 0; i < 32; i++)
-        {
-            int ret1 = strncmp(buffer1, buffer2, i);
-            int ret2 = ft_strncmp(buffer1, buffer2, i);
-            assert(ret1 == ret2);
-        }
-        printf("testcase #%d: OK!\n", t);
-    }
-    memset(buffer1, 0, SIZE);
-    memset(buffer2, 0, SIZE);
-    int ret1 = strncmp(buffer1, buffer2, 3);
-    int ret2 = ft_strncmp(buffer1, buffer2, 3);
-    assert(ret1 == ret2);
-    printf("empty string: OK!\n");
+    char *str1 = "aaa";
+	char *str2 = "a\200";
+	int m = 6;
+	int n1 = ft_strncmp(str1, str2, m);
+	int n2 = strncmp(str1, str2, m);
+	printf("%d %d\n", n1, n2);
+	assert(((n1 > 0) && (n2 > 0)) || ((n1 < 0) && (n2 < 0)) || (!n1 && !n2));
     return (0);
 }
