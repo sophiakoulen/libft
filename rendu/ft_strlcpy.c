@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:34:04 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/14 10:42:25 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/16 16:07:14 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = 0;
 	}
 	while (src[i])
-	i++;
+		i++;
 	return (i);
 }

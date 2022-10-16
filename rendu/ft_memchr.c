@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:38:57 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/14 10:03:13 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/16 16:57:17 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t				i;
 	const unsigned char	*ptr;
 
-	ptr = (unsigned char *)s;
+	ptr = s;
 	i = 0;
 	while (i < n)
 	{

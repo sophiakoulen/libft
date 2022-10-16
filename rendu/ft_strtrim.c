@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:31:42 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/14 10:26:28 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/16 12:41:22 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,17 @@ static char const	*trim_begin(char const *s, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;
-	size_t	i;
+	size_t	len;
 
 	s1 = trim_begin(s1, set);
-	ptr = ft_strdup(s1);
+	len = ft_strlen(s1);
+	if (len)
+	{
+		while (in_set(s1[len - 1], set))
+			len--;
+	}
+	ptr = ft_substr(s1, 0, len);
 	if (!ptr)
 		return (0);
-	i = 0;
-	while (ptr[i])
-		i++;
-	i--;
-	while (in_set(ptr[i], set))
-	{
-		ptr[i] = 0;
-		i--;
-	}
 	return (ptr);
 }
