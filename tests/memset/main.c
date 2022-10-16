@@ -8,11 +8,10 @@
 
 int main()
 {
-    printf("testing ft_memcpy and memmove...\n");
+    printf("testing ft_memset...\n");
 
 	char *dst = 0;
-	char *src = 0;
-	char *ret = memmove(dst, src, 9);
+	char *ret = memset(dst, 0, 15);
 	printf("%p\n", ret);
     return (0);
 }

@@ -35,5 +35,11 @@ int main()
     int ret2 = ft_memcmp(buffer1, buffer2, 3);
     assert(ret1 == ret2);
     printf("empty string: OK!\n");
+
+	char *s1 = 0;
+	char *s2 = 0;
+	int ret = memcmp(s1, s2, 15);
+	printf("%d\n", ret);
+
     return (0);
 }

@@ -10,8 +10,8 @@ int main()
 {
     printf("testing ft_strtrim...\n");
 
-    char s1[] = "";
-    char set[] = "";
+    char s1[] = "agagyyssyAAAauhuwhsuAaaaa";
+    char set[] = "agay";
 
     char *s2 = ft_strtrim(s1, set);
     printf("%s\n", s2);
