@@ -6,7 +6,12 @@
 
 #define SIZE 1024
 
-/*static void f(void *content)
+static void func(void *thing)
+{
+	*(int *)thing = 42;
+}
+
+static void f(void *content)
 {
 	printf("%d\n", *(int *)content);
 }
@@ -15,14 +20,15 @@ static void print_list(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
+		printf("hello\n");
 		f(lst->content);
 		lst = lst->next;
 	}
-}*/
+}
 
 int main()
 {
-    printf("testing ft_lstsize...\n");
+    printf("testing ft_lstiter...\n");
 
 	t_list *lst;
 	lst = 0;
@@ -33,8 +39,9 @@ int main()
 		*number = i;
 		t_list *elt = ft_lstnew(number);
 		assert(elt->next == 0);
-		ft_lstadd_back(&lst, elt);
+		ft_lstadd_front(&lst, elt);
 	}
-	printf("%d\n", *(int *)ft_lstlast(lst)->content);
+	ft_lstiter(lst, func);
+	print_list(lst, f);
     return (0);
 }

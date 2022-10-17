@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:25:56 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/16 16:28:21 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/17 14:49:38 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)

@@ -20,21 +20,18 @@ static void print_list(t_list *lst, void (*f)(void *))
 	}
 }*/
 
+static void	f(void * thing)
+{
+	free(thing);
+}
+
 int main()
 {
-    printf("testing ft_lstsize...\n");
+    printf("testing ft_lstclear...\n");
 
-	t_list *lst;
-	lst = 0;
-	int n = 10;
-	for (int i = 0; i < n; i++)
-	{
-		int *number = malloc(sizeof (*number));
-		*number = i;
-		t_list *elt = ft_lstnew(number);
-		assert(elt->next == 0);
-		ft_lstadd_back(&lst, elt);
-	}
-	printf("%d\n", *(int *)ft_lstlast(lst)->content);
+	int *n = malloc(sizeof(*n));
+	*n = 10;
+	t_list *lst = ft_lstnew(n);
+	ft_lstdelone(lst, f);
     return (0);
 }

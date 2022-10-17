@@ -20,9 +20,15 @@ static void print_list(t_list *lst, void (*f)(void *))
 	}
 }*/
 
+static void	f(void * thing)
+{
+	free(thing);
+	printf("free\n");
+}
+
 int main()
 {
-    printf("testing ft_lstsize...\n");
+    printf("testing ft_lstclear...\n");
 
 	t_list *lst;
 	lst = 0;
@@ -33,8 +39,9 @@ int main()
 		*number = i;
 		t_list *elt = ft_lstnew(number);
 		assert(elt->next == 0);
-		ft_lstadd_back(&lst, elt);
+		ft_lstadd_front(&lst, elt);
 	}
-	printf("%d\n", *(int *)ft_lstlast(lst)->content);
+	ft_lstclear(&lst, f);
+	assert(lst == 0);
     return (0);
 }
