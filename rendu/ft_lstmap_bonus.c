@@ -6,13 +6,13 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:03:50 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/17 15:41:12 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/19 10:34:27 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*create_or_cleanup(t_list *new_list, t_list *iter,
+static t_list	*create_or_cleanup(t_list *new_list, t_list *iter,
 	void *(*f)(void *), void (*del)(void *))
 {
 	void	*new_content;

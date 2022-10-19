@@ -61,7 +61,7 @@ ft_lstmap_bonus.o
 all: $(NAME)
 
 $(NAME): $(SRC)
-	ar r $@ $?
+	ar rc $@ $?
 	ranlib $@
 
 .c.o:

@@ -6,13 +6,13 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 19:08:33 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/14 10:14:48 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/10/19 10:33:39 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_tok(const char **s, char sep)
+static char	*tok(const char **s, char sep)
 {
 	char	*tok;
 	size_t	i;
@@ -41,7 +41,7 @@ static size_t	word_count(char const *s, char c)
 	return (count);
 }
 
-void	cleanup(char **arr, unsigned int n)
+static void	cleanup(char **arr, unsigned int n)
 {
 	unsigned int	i;
 
@@ -64,11 +64,11 @@ char	**ft_split(char const *s, char c)
 	if (!arr)
 		return (0);
 	i = 0;
-	str = ft_tok(&s, c);
+	str = tok(&s, c);
 	while (str && *str)
 	{
 		arr[i] = str;
-		str = ft_tok(&s, c);
+		str = tok(&s, c);
 		i++;
 	}
 	if (!str)

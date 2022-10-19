@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*p_dst;
 	const unsigned char	*p_src;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	p_dst = dest;
 	p_src = src;
