@@ -1,6 +1,6 @@
 # libft
 
-A library of useful functions written only using `write`, `malloc` and `free`.
+A library of useful functions written using only `write`, `malloc` and `free`.
 
 - ft_isalpha
 - ft_isdigit
