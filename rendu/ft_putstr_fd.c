@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:10:01 by skoulen           #+#    #+#             */
-/*   Updated: 2022/10/14 10:10:14 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/11/04 15:28:40 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		ft_putchar_fd(*s, fd);
-		s++;
-	}
+	size_t	len;
+
+	len = ft_strlen(s);
+	write(fd, s, len);
 }
