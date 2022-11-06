@@ -1,5 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_nbr_len.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/06 09:46:56 by skoulen           #+#    #+#             */
+/*   Updated: 2022/11/06 09:48:48 by skoulen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 /*
 	ft_nbr_len computes the amount of characters one would need
 	to represent a number with a given base. It takes into acount
@@ -14,7 +25,7 @@
 
 int	ft_nbr_len(int n, int base)
 {
-	int abs_len;
+	int	abs_len;
 
 	if (base < 2)
 		return (-1);

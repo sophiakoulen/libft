@@ -86,5 +86,6 @@ char	*ft_itoa_base(int n, char *symbols);
 int		ft_nbr_abs_len(int n, int base);
 int		ft_nbr_len(int n, int base);
 int		ft_sign(int n);
+void	ft_putnbr_base_fd(int n, char *symbols, int fd);
 
 #endif

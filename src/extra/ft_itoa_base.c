@@ -6,7 +6,7 @@
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:18:12 by skoulen           #+#    #+#             */
-/*   Updated: 2022/11/04 18:58:16 by skoulen          ###   ########.fr       */
+/*   Updated: 2022/11/06 09:53:47 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*ft_itoa_base_helper(int n, int base, char *symbols, char *ptr)
 {
 	if (n >= base || n <= -base)
 		ptr = ft_itoa_base_helper(n / base, base, symbols, ptr);
-	*ptr = (n % base) * ft_sign(n) + *symbols;
+	*ptr = *(symbols + (n % base) * ft_sign(n));
 	*(ptr + 1) = 0;
 	return (ptr + 1);
 }
