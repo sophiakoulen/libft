@@ -62,7 +62,10 @@ EXTRA = extra/ft_sign.o \
 extra/ft_itoa_base.o \
 extra/ft_nbr_abs_len.o \
 extra/ft_nbr_len.o \
-extra/ft_putnbr_base_fd.o
+extra/ft_nbr_len_unsigned.o \
+extra/ft_putnbr_base_fd.o \
+extra/ft_itoa_base_unsigned.o \
+extra/ft_putnbr_base_unsigned_fd.o
 
 all: $(NAME)
 

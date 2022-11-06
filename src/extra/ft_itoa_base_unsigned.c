@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_unsigned_fd.c                       :+:      :+:    :+:   */
+/*   ft_itoa_base_unsigned.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 10:46:41 by skoulen           #+#    #+#             */
-/*   Updated: 2022/11/06 11:13:25 by skoulen          ###   ########.fr       */
+/*   Created: 2022/11/06 10:55:54 by skoulen           #+#    #+#             */
+/*   Updated: 2022/11/06 11:05:12 by skoulen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putnbr_base_unsigned_helper(unsigned int n, unsigned int base, char *symbols, int fd)
+static char	*ft_itoa_base_unsigned_helper(unsigned int n, unsigned int base, char *symbols, char *ptr)
 {
 	if (n >= base)
-		ft_putnbr_base_unsigned_helper(n / base, base, symbols, fd);
-	ft_putchar_fd(*(symbols + (n % base)), fd);
+		ptr = ft_itoa_base_unsigned_helper(n / base, base, symbols, ptr);
+	*ptr = *(symbols + (n % base));
+	*(ptr + 1) = 0;
+	return (ptr + 1);
 }
 
-void	ft_putnbr_base_unsigned_fd(unsigned int n, char *symbols, int fd)
+char	*ft_itoa_base_unsigned(unsigned int n, char *symbols)
 {
+	char			*ptr;
+	size_t			len;
 	unsigned int	base;
 
 	base = ft_strlen(symbols);
-	if (base < 2)
-		return ;
-	ft_putnbr_base_unsigned_helper(n, base, symbols, fd);
+	len = ft_nbr_len(n, base);
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return (0);
+	ft_itoa_base_unsigned_helper(n, base, symbols, ptr);
+	return (ptr);
 }
