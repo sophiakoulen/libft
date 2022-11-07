@@ -84,7 +84,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //extra
 int		ft_nbr_abs_len(int n, int base);
 int		ft_nbr_len(int n, int base);
-int		ft_nbr_len_unsigned(unsigned int n, unsigned int base);
+int		ft_nbr_len_unsigned(size_t n, size_t base);
 
 int		ft_sign(int n);
 
@@ -93,6 +93,5 @@ void	ft_putnbr_base_fd(int n, char *symbols, int fd);
 
 char	*ft_itoa_base_unsigned(size_t n, char *symbols);
 void	ft_putnbr_base_unsigned_fd(size_t n, char *symbols, int fd);
-
 
 #endif
