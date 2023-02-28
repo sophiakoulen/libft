@@ -11,6 +11,24 @@ START_TEST(test_strcmp1)
 }
 END_TEST
 
+START_TEST(test_strcmp2)
+{
+	char	*str1 = "hello world";
+	char	*str2 = "hello world";
+	ck_assert_int_eq(ft_strcmp(str1, str2), strcmp(str1, str2));
+}
+END_TEST
+
+START_TEST(test_strcmp3)
+{
+	char	*str1 = "hello";
+	char	*str2 = "hello world";
+	ck_assert_int_eq(ft_strcmp(str1, str2), strcmp(str1, str2));
+	ck_assert_int_eq(ft_strcmp(str2, str1), strcmp(str2, str1));
+}
+END_TEST
+
+
 Suite	*strcmp_suite(void)
 {
 	Suite	*s;
@@ -21,6 +39,8 @@ Suite	*strcmp_suite(void)
 	tc_core = tcase_create("core");
 
 	tcase_add_test(tc_core, test_strcmp1);
+	tcase_add_test(tc_core, test_strcmp2);
+	tcase_add_test(tc_core, test_strcmp3);
 	suite_add_tcase(s, tc_core);
 
 	return (s);
