@@ -11,7 +11,7 @@ LIBS = -lft -lcheck
 
 LIBFT = ../libft/libft.a
 
-FILES = test
+FILES = main test_strcmp
 SRCS = $(addsuffix .c, $(FILES))
 OBJS = $(addsuffix .o, $(FILES))
 
@@ -20,7 +20,7 @@ OBJS = $(addsuffix .o, $(FILES))
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): update-libft $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(LIBS_PATH) $(LIBS) -o $@ $(OBJS)
 
 clean:
@@ -35,5 +35,5 @@ re: fclean all
 
 .PHONY: all fclean clean re
 
-$(LIBFT):
+update-libft:
 	make -C ../libft
